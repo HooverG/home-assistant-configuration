@@ -1,0 +1,3 @@
+recorder:
+  auto_purge: true
+  purge_keep_days: 3

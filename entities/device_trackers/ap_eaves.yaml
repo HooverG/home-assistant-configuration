@@ -1,0 +1,6 @@
+- platform: unifi_direct
+  host: !secret uap_eaves_ip
+  username: !secret uap_username
+  password: !secret uap_password
+  interval_seconds: 300
+  consider_home: 600

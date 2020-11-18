@@ -1,0 +1,15 @@
+!*.yaml
+!.gitignore
+!*.md
+!.gitkeep
+
+*.log
+*.db
+
+.storage
+.cloud
+.google.token
+
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

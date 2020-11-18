@@ -1,0 +1,11 @@
+vacation_departure:
+  name: Vacation Departure
+  icon: mdi:airplane-takeoff
+  has_date: true
+  has_time: true
+
+vacation_return:
+  name: Vacation Return
+  icon: mdi:airplane-landing
+  has_date: true
+  has_time: true

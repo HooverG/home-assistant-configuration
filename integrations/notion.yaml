@@ -1,0 +1,3 @@
+notion:
+    username: !secret email
+    password: !secret notion_password

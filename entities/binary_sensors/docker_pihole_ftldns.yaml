@@ -1,0 +1,12 @@
+# Command used : dig @dns_server_ip -x 8.8.8.8 +short
+# @dns_server_ip sends the query to the specified ip
+# -x : reverse dns lookup
+# +short : get the short answer only (expected payload)
+
+platform: command_line
+command: !secret docker_pihole_ftldns_dig
+name: 'Docker Pi-hole FTLDNS'
+device_class: connectivity
+payload_on: dns.google.
+scan_interval: 300
+command_timeout: 30

@@ -1,0 +1,7 @@
+christmas_tree:
+  name: Christmas Tree Set Up
+  icon: mdi:pine-tree
+
+christmas_house_lights:
+  name: House Lights Set Up
+  icon: mdi:string-lights

@@ -1,0 +1,11 @@
+device_tracker.staircase:
+  friendly_name: AP Staircase
+  icon: mdi:antenna
+
+device_tracker.fireplace:
+  friendly_name: AP Fireplace
+  icon: mdi:antenna
+
+device_tracker.eaves:
+  friedly_name: AP Eaves
+  icon: mdi:antenna

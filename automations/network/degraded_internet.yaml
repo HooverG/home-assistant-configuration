@@ -1,0 +1,57 @@
+#
+# Monitor internet upload and downloads speed.
+#
+
+- alias: 'Slow Internet Connection Upoload'
+  mode: single
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_upload
+    below: 7
+    for: "01:00:00"
+  action:
+    service: notify.telegram_network_chat
+    data:
+      title: "[Network] Slow Internet Upload Speed"
+      message: >
+        "Speed measured : {{ states('sensor.speedtest_upload') }} {{ state_attr('sensor.speedtest_upload','unit_of_measurement') }}
+         Time : {{ now() }}"
+      #notification_id: slow_internet_upload
+
+- alias: 'Normal Internet Connection Upload'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_upload
+    above: 10
+    for: "00:10:00"
+  action:
+    service: persistent_notification.dismiss
+    data:
+      notification_id: slow_internet_upload
+
+- alias: 'Slow Internet Connection Download'
+  mode: single
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_download
+    below: 200
+    for: "00:30:00"
+  action:
+    service: persistent_notification.create
+    data:
+      title: "[Network] Slow Internet Download Speed"
+      message: >
+        "Speed measured : {{ states('sensor.speedtest_download') }} {{ state_attr('sensor.speedtest_download','unit_of_measurement') }}
+         Time : {{ now() }}"
+      notification_id: slow_internet_download
+
+- alias: 'Normal Internet Connection Download'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_upload
+    above: 200
+    for: "00:10:00"
+  action:
+    service: persistent_notification.dismiss
+    data:
+      notification_id: slow_internet_download

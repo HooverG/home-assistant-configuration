@@ -1,0 +1,16 @@
+#
+# Monitor Ubiquity Unifi WiFi AP
+#
+- alias : "Monitor WiFi AP presence on LAN"
+  trigger:
+    platform: state
+    entity_id: device_tracker.staircase, device_tracker.fireplace, device_tracker.eaves
+    from: "home"
+    to: "not home"
+    for: "00:10:00"
+  action:
+      service: persistent_notification.create
+      data:
+        title: "[Network] Missing WiFi AP"
+        message: "Missing device : {{ trigger.to_state.name }}"
+        notification_id: missing_wifi_ap
