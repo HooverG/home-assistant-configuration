@@ -47,7 +47,7 @@
 - alias: 'Normal Internet Connection Download'
   trigger:
     platform: numeric_state
-    entity_id: sensor.speedtest_upload
+    entity_id: sensor.speedtest_download
     above: 200
     for: "00:10:00"
   action:
