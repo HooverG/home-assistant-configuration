@@ -1,0 +1,11 @@
+landscape_lightning_main_door:
+  name: Landscape Lightning Main Door
+  icon: mdi:track-light
+
+landscape_lightning_driveway:
+  name: Landscape Lightning Driveway
+  icon: mdi:track-light
+  
+landscape_lightning_front_yard:
+  name: Landscape Lightning Front Yard
+  icon: mdi:track-light
