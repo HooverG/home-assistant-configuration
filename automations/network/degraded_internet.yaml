@@ -12,7 +12,7 @@
   action:
     service: notify.telegram_network_chat
     data:
-      title: "[Network] Slow Internet Upload Speed"
+      title: "[Anomaly] Slow Internet Upload Speed"
       message: >
         "Speed measured : {{ states('sensor.speedtest_upload') }} {{ state_attr('sensor.speedtest_upload','unit_of_measurement') }}
          Time : {{ now() }}"
@@ -24,9 +24,12 @@
     above: 10
     for: "00:10:00"
   action:
-    service: persistent_notification.dismiss
+    service: notify.telegram_network_chat
     data:
-      notification_id: slow_internet_upload
+      title: "[Resolution] Internet Upload Speed Restored"
+      message: >
+        "Speed measured : {{ states('sensor.speedtest_upload') }} {{ state_attr('sensor.speedtest_upload','unit_of_measurement') }}
+         Time : {{ now() }}"
 
 - alias: 'Slow Internet Connection Download'
   mode: single
@@ -38,11 +41,11 @@
   action:
     service: notify.telegram_network_chat
     data:
-      title: "[Network] Slow Internet Download Speed"
+      title: "[Anomaly] Slow Internet Download Speed"
       message: >
         "Speed measured : {{ states('sensor.speedtest_download') }} {{ state_attr('sensor.speedtest_download','unit_of_measurement') }}
          Time : {{ now() }}"
-      notification_id: slow_internet_download
+
 
 - alias: 'Normal Internet Connection Download'
   trigger:
@@ -51,6 +54,9 @@
     above: 200
     for: "00:10:00"
   action:
-    service: persistent_notification.dismiss
+    service: notify.telegram_network_chat
     data:
-      notification_id: slow_internet_download
+      title: "[Resolution] Internet Download Speed Restored"
+      message: >
+        "Speed measured : {{ states('sensor.speedtest_download') }} {{ state_attr('sensor.speedtest_download','unit_of_measurement') }}
+         Time : {{ now() }}"
