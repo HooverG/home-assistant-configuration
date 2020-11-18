@@ -5,6 +5,8 @@
 
 *.log
 *.db
+*.db-shm
+*.db-wal
 
 .storage
 .cloud

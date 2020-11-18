@@ -16,7 +16,6 @@
       message: >
         "Speed measured : {{ states('sensor.speedtest_upload') }} {{ state_attr('sensor.speedtest_upload','unit_of_measurement') }}
          Time : {{ now() }}"
-      #notification_id: slow_internet_upload
 
 - alias: 'Normal Internet Connection Upload'
   trigger:
@@ -37,7 +36,7 @@
     below: 200
     for: "00:30:00"
   action:
-    service: persistent_notification.create
+    service: notify.telegram_network_chat
     data:
       title: "[Network] Slow Internet Download Speed"
       message: >
