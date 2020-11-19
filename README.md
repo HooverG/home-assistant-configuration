@@ -1,6 +1,6 @@
 # Home Assistant #
 
-[![Build Status](https://travis-ci.com/HooverG/home-assistant-configuration.svg?branch=master)]
+![Build Status](https://travis-ci.com/HooverG/home-assistant-configuration.svg?branch=master)
 
 November2020 - New Personal configuration for [Home Assistant](https://www.home-assistant.io/).
 
