@@ -8,6 +8,7 @@
 *.db-shm
 *.db-wal
 
+.ssh
 .storage
 .cloud
 .google.token
