@@ -1,11 +1,1 @@
-- id: '1605824912807'
-  alias: Run Internet Speed Test
-  description: Run Speedtest.net
-  trigger:
-  - platform: time_pattern
-    hours: '2'
-  condition: []
-  action:
-  - service: speedtestdotnet.speedtest
-    data: {}
-  mode: single
+[]

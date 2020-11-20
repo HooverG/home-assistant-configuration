@@ -1,0 +1,10 @@
+- alias: Run Internet Speed Test
+  description: Call Speedtest Service every 2 hours
+  trigger:
+  - platform: time_pattern
+    hours: "/2"
+  condition: []
+  action:
+  - service: speedtestdotnet.speedtest
+    data: {}
+  mode: single

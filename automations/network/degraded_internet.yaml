@@ -2,27 +2,26 @@
 # Monitor internet upload and downloads speed.
 #
 
-- alias: 'Slow Internet Connection Upoload'
+- alias: 'Slow Internet Connection Upload'
   mode: single
   trigger:
     platform: numeric_state
     entity_id: sensor.speedtest_upload
     below: 7
-    for: "01:00:00"
   action:
-    service: notify.telegram_network_chat
-    data:
-      title: "[Anomaly] Slow Internet Upload Speed"
+    service: script.admin_notifications
+    data: 
       message: >
         "Speed measured : {{ states('sensor.speedtest_upload') }} {{ state_attr('sensor.speedtest_upload','unit_of_measurement') }}
          Time : {{ now() }}"
+      name: 'Slow Internet Connection Upload'
+      entity_id: automation.slow_internet_connection_upload
 
 - alias: 'Normal Internet Connection Upload'
   trigger:
     platform: numeric_state
     entity_id: sensor.speedtest_upload
     above: 10
-    for: "00:10:00"
   action:
     service: notify.telegram_network_chat
     data:
@@ -37,14 +36,14 @@
     platform: numeric_state
     entity_id: sensor.speedtest_download
     below: 200
-    for: "00:30:00"
   action:
-    service: notify.telegram_network_chat
-    data:
-      title: "[Anomaly] Slow Internet Download Speed"
+    service: script.admin_notifications
+    data: 
       message: >
         "Speed measured : {{ states('sensor.speedtest_download') }} {{ state_attr('sensor.speedtest_download','unit_of_measurement') }}
          Time : {{ now() }}"
+      name: 'Slow Internet Connection Download'
+      entity_id: automation.slow_internet_connection_download
 
 
 - alias: 'Normal Internet Connection Download'
@@ -52,7 +51,6 @@
     platform: numeric_state
     entity_id: sensor.speedtest_download
     above: 200
-    for: "00:10:00"
   action:
     service: notify.telegram_network_chat
     data:

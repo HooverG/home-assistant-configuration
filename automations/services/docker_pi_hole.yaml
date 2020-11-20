@@ -1,0 +1,15 @@
+- alias: Pi-Hole container front page not visible
+  description: Didn't receive a HTTP header 200 from the front page for 10 minutes.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.docker_pi_hole
+    from: 'on'
+    to: 'off'
+    for: 0:10:00
+  condition: []
+  action:
+  - service: notify.telegram_network_chat
+    data:
+      message: >
+        "[Outage] Unable to receive a HTTP200 from Pi-Hole docker container front page"
+  mode: single

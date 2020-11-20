@@ -1,0 +1,17 @@
+admin_notifications:
+  alias: Admin Notifications
+  sequence:
+  - service: notify.telegram_network_chat
+    data:
+      message: "{{ message }}"
+  - service: persistent_notification.create
+    data:
+      message: "{{ message }}"
+  - service: logbook.log
+    data:
+      message: "{{ message }}"
+      name: "{{ name }}"
+      entity_id: "{{ entity_id }}"
+  mode: queued
+  icon: mdi:shield-account
+  max: 10

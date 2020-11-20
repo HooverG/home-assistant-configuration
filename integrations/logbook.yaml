@@ -1,0 +1,5 @@
+logbook:
+  include:
+    domains:
+      - automation
+      - script

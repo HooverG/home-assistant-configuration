@@ -1,0 +1,4 @@
+tplink:
+  discovery: true
+  switch:
+    - host: !secret tplink_switch_maindoor_ip
