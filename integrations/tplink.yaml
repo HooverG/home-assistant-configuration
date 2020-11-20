@@ -2,3 +2,4 @@ tplink:
   discovery: true
   switch:
     - host: !secret tplink_switch_maindoor_ip
+    - host: !secret tplink_switch_masterbath_toilet_ip
