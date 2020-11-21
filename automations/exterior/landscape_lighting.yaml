@@ -3,7 +3,7 @@
     platform: numeric_state
     entity_id: sun.sun
     attribute: elevation
-    below: -4.0
+    below: input_number.landscape_lighting_elevation
   condition:
     - condition: state
       entity_id: 'input_boolean.landscape_lighting_main_door'
@@ -12,10 +12,10 @@
     service: switch.turn_on
     entity_id: switch.landscape_lighting_main_door
     
-- alias: "Landscape Lighting. Turn OFF Main door"
+- alias: "Landscape Lighting. Turn OFF"
   trigger:
     platform: time
-    at: "23:00:00"
+    at: input_datetime.landscape_lighting_stop_time
   action:
     service: switch.turn_off
     entity_id: switch.landscape_lighting_main_door
