@@ -1,0 +1,4 @@
+landscape_lighting_stop_time:
+  name: Stop Time
+  icon: mdi:clock-end
+  has_time: true
