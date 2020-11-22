@@ -1,0 +1,5 @@
+# HACS custom_component
+
+adtpulse:
+  username: !secret adtpulse_username
+  password: !secret adtpulse_password
