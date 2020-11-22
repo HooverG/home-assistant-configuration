@@ -3,3 +3,4 @@ tplink:
   switch:
     - host: !secret tplink_switch_maindoor_ip
     - host: !secret tplink_switch_masterbath_toilet_ip
+    - host: !secret tplink_switch_kidsbath_main_ip
