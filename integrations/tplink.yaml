@@ -4,3 +4,6 @@ tplink:
     - host: !secret tplink_switch_maindoor_ip
     - host: !secret tplink_switch_masterbath_toilet_ip
     - host: !secret tplink_switch_kidsbath_main_ip
+    - host: !secret tp_link_switch_main_garage_ip
+    - host: !secret tp_link_switch_workshop_ip
+    - host: !secret tp_link_switch_driveway_ip
