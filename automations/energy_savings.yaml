@@ -1,0 +1,9 @@
+- alias: "Energy Savings : Turn off Master Bath Toilet"
+  trigger:
+    platform: state
+    entity_id: switch.master_bath_toilet
+    to: "on"
+    for: 00:30:00
+  action:
+    - service: switch.turn_off
+      entity_id: switch.master_bath_toilet
