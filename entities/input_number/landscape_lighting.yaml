@@ -1,5 +1,5 @@
 landscape_lighting_elevation:
- name: Sun Elevation Parameter
+ name: Sun Angle Parameter
  min: -10
  max: 10
  step: 0.1
