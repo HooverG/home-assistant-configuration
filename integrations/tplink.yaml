@@ -7,3 +7,4 @@ tplink:
     - host: !secret tp_link_switch_main_garage_ip
     - host: !secret tp_link_switch_workshop_ip
     - host: !secret tp_link_switch_driveway_ip
+    - host: !secret tp_link_plug_1_ip
