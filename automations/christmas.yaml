@@ -1,7 +1,7 @@
 - alias: "Christmas: TURN ON Christmas Tree"
   trigger:
     platform: time
-    at: '17:30:00'
+    at: '17:10:00'
   condition:
     condition: state
     entity_id: input_boolean.christmas_tree
