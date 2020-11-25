@@ -7,3 +7,13 @@
   action:
     - service: switch.turn_off
       entity_id: switch.master_bath_toilet
+      
+- alias: "Energy Savings : Turn off Pantry"
+  trigger:
+    platform: state
+    entity_id: switch.pantry
+    to: "on"
+    for: 00:07:00
+  action:
+    - service: switch.turn_off
+      entity_id: switch.pantry
