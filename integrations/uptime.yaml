@@ -1,0 +1,4 @@
+sensor:
+  - platform: uptime
+    name: HA Online
+    unit_of_measurement: days
