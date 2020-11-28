@@ -11,5 +11,6 @@ tplink:
     - host: !secret tp_link_switch_laundry_room_ip
     - host: !secret tp_link_switch_genti_bedroom_ip
     - host: !secret tp_link_switch_genti_closet_ip
+    - host: !secret tp_link_switch_garage_hall_ip
     - host: !secret tp_link_3w_switch_kidshall_ip
     - host: !secret tp_link_plug_1_ip
