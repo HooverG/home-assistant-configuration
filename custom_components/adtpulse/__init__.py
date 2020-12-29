@@ -35,11 +35,13 @@ ATTR_DEVICE_ID = 'device_id'
 
 SUPPORTED_PLATFORMS = [ 'alarm_control_panel', 'binary_sensor' ]
 
+DEFAULT_SCAN_INTERVAL=60
+
 CONFIG_SCHEMA = vol.Schema({
         ADTPULSE_DOMAIN: vol.Schema({
             vol.Required(CONF_USERNAME): cv.string,
             vol.Required(CONF_PASSWORD): cv.string,
-            vol.Optional(CONF_SCAN_INTERVAL, default=5): cv.positive_int,
+            vol.Optional(CONF_SCAN_INTERVAL, default=DEFAULT_SCAN_INTERVAL): cv.positive_int,
             vol.Optional(CONF_HOST, default='portal.adtpulse.com'): cv.string
         })
     }, extra=vol.ALLOW_EXTRA
@@ -101,7 +103,7 @@ class ADTPulseEntity(Entity):
     """Base Entity class for ADT Pulse devices"""
 
     def __init__(self, hass, service, name):
-        self._hass = hass
+        self.hass = hass
         self._service = service
         self._name = name
 
@@ -129,14 +131,11 @@ class ADTPulseEntity(Entity):
     async def async_added_to_hass(self):
         """Register callbacks."""
         # register callback when cached ADTPulse data has been updated
-        async_dispatcher_connect(self._hass, SIGNAL_ADTPULSE_UPDATED, self._update_callback)
+        async_dispatcher_connect(self.hass, SIGNAL_ADTPULSE_UPDATED, self._update_callback)
 
     @callback
     def _update_callback(self):
         """Call update method."""
-
-# FIXME: update based on the latest...
-#        LOG.info(f"Updated {self._name} to {self._state} {self.unit_of_measurement} : {latest_result}")
 
         # inform HASS that ADT Pulse data for this entity has been updated
         self.async_schedule_update_ha_state()
