@@ -1,0 +1,23 @@
+blueprint:
+  name: Switch Auto Off
+  description: Turns a switch off after x time
+  domain: automation
+  input:
+    switch:
+      name: Switch
+      description: This Switch will turn off after allowed time.
+      selector:
+        entity:
+          domain: switch
+    duration:
+      name: Duration
+      description: The amount of allotted time. (HH:MM:SS)
+trigger:
+  platform: state
+  entity_id: !input 'switch'
+  to: 'on'
+  for: !input 'duration'
+action:
+  service: switch.turn_off
+  entity_id: !input 'switch'
+mode: single

@@ -1,1 +1,8 @@
-[]
+- id: '1609367276352'
+  alias: Savings - Laundry Room Light Auto Off
+  description: Turns off laundry room light automatically after x minutes
+  use_blueprint:
+    path: switch_auto_off.yaml
+    input:
+      switch: switch.laundry_room
+      duration: 00:20:00
