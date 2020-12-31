@@ -1,8 +1,32 @@
 - id: '1609367276352'
-  alias: Savings - Laundry Room Light Auto Off
+  alias: 'Energy Savings : Laundry Room Light Auto-off'
   description: Turns off laundry room light automatically after x minutes
   use_blueprint:
     path: switch_auto_off.yaml
     input:
       switch: switch.laundry_room
       duration: 00:20:00
+- id: '1609431507707'
+  alias: 'Energy Savings : Garage Hallway Light Auto-off'
+  description: Turns off garage hallway light automatically after x minutes
+  use_blueprint:
+    path: switch_auto_off.yaml
+    input:
+      switch: switch.garage_hall
+      duration: 00:20:00
+- id: '1609432408834'
+  alias: 'Energy Savings : Pantry Light Auto-off'
+  description: Turn off pantry light automatically after x minutes
+  use_blueprint:
+    path: switch_auto_off.yaml
+    input:
+      switch: switch.pantry
+      duration: 00:07:00
+- id: '1609432724254'
+  alias: 'Energy Savings: Master Bath Toilet Light Auto-off'
+  description: Turns off master bath toilet light automatically after x minutes
+  use_blueprint:
+    path: switch_auto_off.yaml
+    input:
+      switch: switch.master_bath_toilet
+      duration: '20'
