@@ -29,4 +29,12 @@
     path: switch_auto_off.yaml
     input:
       switch: switch.master_bath_toilet
-      duration: '20'
+      duration: 00:15:00
+- id: '1609532628306'
+  alias: 'Energy Savings : Genti''s Closet Auto-off'
+  description: Turns off Genti's closet automatically after x minutes
+  use_blueprint:
+    path: switch_auto_off.yaml
+    input:
+      switch: switch.genti_closet
+      duration: 00:10:00
