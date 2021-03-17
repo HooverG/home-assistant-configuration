@@ -1,0 +1,2 @@
+platform: pjlink
+host: !secret optoma_uhd_65_ip
