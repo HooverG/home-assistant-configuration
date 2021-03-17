@@ -18,7 +18,7 @@ tplink:
     - host: !secret tp_link_switch_basement_kitchen_ip
     - host: !secret tp_link_switch_litter_room_ip
     - host: !secret tp_link_switch_storage_room_ip
-    - host: tp_link_3w_switch_basement_lounge_part1_ip
+    - host: !secret tp_link_3w_switch_basement_lounge_part1_ip
     - host: !secret tp_link_3w_switch_basement_lounge_part2_ip
     - host: !secret tp_link_switch_basement_bedroom1_ip
     - host: !secret tp_link_switch_basement_bedroom2_ip
