@@ -1,0 +1,18 @@
+- alias: "Energy Savings : Kids Bathroom Fan auto-off x minutes after main light is turned off"
+  trigger:
+    platform: state
+    entity_id: switch.kids_bathroom_main
+    to: 'off'
+  action:
+    - delay: '00:15:00'
+    - service: switch.turn_off
+      entity_id: switch.kids_bath_fan
+      
+- alias: "Energy Savings: Turn off shower light as soon as main light is turned off"
+  trigger:
+    platform: state
+    entity_id: switch.kids_bathroom_main
+    to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.kids_bath_shower_light
