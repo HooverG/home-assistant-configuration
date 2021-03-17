@@ -1,24 +1,27 @@
-- alias: "Landscape Lighting. Turn ON Main door"
+- alias: "Landscape Lighting. Turn ON"
   trigger:
-    platform: template
-    value_template: >
-      {{ state_attr('sun.sun','elevation')|float <= states('input_number.landscape_lighting_elevation')|float }}
+    platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 3.20
   condition:
     - condition: state
-      entity_id: 'input_boolean.landscape_lighting_main_door'
+      entity_id: 'input_boolean.landscape_lighting_front_yard'
       state: 'on'
   action:
     - service: switch.turn_on
       entity_id:
-        - switch.landscape_lighting_main_door
+        - switch.landscape_lighting_plug
         - switch.driveway
     
 - alias: "Landscape Lighting. Turn OFF"
   trigger:
-    platform: time
-    at: input_datetime.landscape_lighting_stop_time
+    platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    above: -2
   action:
     - service: switch.turn_off
-      entity_id: switch.landscape_lighting_main_door
-    - service: switch.turn_off
-      entity_id: switch.driveway
+      entity_id:
+        - switch.landscape_lighting_plug
+        - switch.driveway
