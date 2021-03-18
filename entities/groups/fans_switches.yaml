@@ -1,0 +1,6 @@
+fans_switches:
+  name: Fans Group
+  entities:
+    - switch.basement_master_bathroom_fan
+    - switch.home_theater_fan
+    - switch.kids_bath_fan
