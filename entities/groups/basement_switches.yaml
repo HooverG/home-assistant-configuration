@@ -1,15 +1,20 @@
 basement_switches:
-  name: Basement Switches
+  name: Basement Switches Group
   entities:
-    - switch.basement_master_bathroom_shower
-    - switch.basement_master_bathroom_toilet
-    - switch.basement_small_hallway
     - switch.basement_staircase
+    - switch.basement_small_hallway
+    - switch.basement_bedrooms_hallway
+    - switch.basement_lounge_part_1
+    - switch.basement_lounge_part_2
     - switch.gym
-    - switch.home_theater_ambiance_light
-    - switch.home_theater_main_light
+    - switch.basement_kitchen
     - switch.litter_room
     - switch.storage_room
     - switch.basement_bedroom_1
     - switch.basement_bedroom_2
-    - switch.basement_kitchen
+    - switch.basement_master_bathroom_shower
+    - switch.basement_master_bathroom_toilet
+    - switch.basement_master_bathroom_main
+    - switch.basement_master_bathroom_vanity
+    - switch.home_theater_main_light
+    - switch.home_theater_ambiance_light

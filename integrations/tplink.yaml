@@ -2,24 +2,29 @@ tplink:
   discovery: true
   switch:
     - host: !secret tp_link_switch_maindoor_ip
+    - host: !secret tp_link_switch_driveway_ip
+    - host: !secret tp_link_landscape_lighting_plug_2_ip
+    - host: !secret tp_link_switch_main_garage_ip
+    - host: !secret tp_link_switch_garage_hall_ip
+    - host: !secret tp_link_switch_workshop_ip
+    - host: !secret tp_link_switch_laundry_room_ip
     - host: !secret tp_link_switch_masterbath_toilet_ip
+    - host: !secret tp_link_3w_switch_kidshall_ip
     - host: !secret tp_link_switch_kidsbath_main_ip
     - host: !secret tp_link_switch_kidsbath_shower_ip
     - host: !secret tp_link_switch_kidsbath_fan_ip
-    - host: !secret tp_link_switch_main_garage_ip
-    - host: !secret tp_link_switch_workshop_ip
-    - host: !secret tp_link_switch_driveway_ip
-    - host: !secret tp_link_switch_pantry_ip
-    - host: !secret tp_link_switch_laundry_room_ip
     - host: !secret tp_link_switch_genti_bedroom_ip
     - host: !secret tp_link_switch_genti_closet_ip
-    - host: !secret tp_link_switch_garage_hall_ip
+    - host: !secret tp_link_switch_pantry_ip
+    - host: !secret tp_link_3w_switch_basement_staircase_ip
+    - host: !secret tp_link_switch_basement_small_hallway_ip
+    - host: !secret tp_link_3w_basement_bedrooms_hallway_ip
+    - host: !secret tp_link_3w_switch_basement_lounge_part1_ip
+    - host: !secret tp_link_3w_switch_basement_lounge_part2_ip
     - host: !secret tp_link_switch_gym_ip
     - host: !secret tp_link_switch_basement_kitchen_ip
     - host: !secret tp_link_switch_litter_room_ip
     - host: !secret tp_link_switch_storage_room_ip
-    - host: !secret tp_link_3w_switch_basement_lounge_part1_ip
-    - host: !secret tp_link_3w_switch_basement_lounge_part2_ip
     - host: !secret tp_link_switch_basement_bedroom1_ip
     - host: !secret tp_link_switch_basement_bedroom2_ip
     - host: !secret tp_link_switch_basement_master_bathroom_fan_ip
@@ -27,13 +32,7 @@ tplink:
     - host: !secret tp_link_switch_basement_master_bathroom_toilet_ip
     - host: !secret tp_link_switch_basement_master_bathroom_main_ip
     - host: !secret tp_link_switch_basement_master_bathroom_vanities_ip
-    - host: !secret tp_link_switch_basement_small_hallway_ip
     - host: !secret tp_link_switch_home_theater_main_light_ip
     - host: !secret tp_link_switch_home_theater_ambiance_light_ip
     - host: !secret tp_link_switch_home_theater_fan_ip
-    - host: !secret tp_link_3w_switch_basement_staircase_ip
-    - host: !secret tp_link_3w_switch_kidshall_ip
     - host: !secret tp_link_plug_1_ip
-    - host: !secret tp_link_landscape_lighting_plug_2_ip
-    - host: !secret tp_link_landscape_lighting_plug_2_ip
-    - host: !secret tp_link_3w_basement_bedrooms_hallway_ip

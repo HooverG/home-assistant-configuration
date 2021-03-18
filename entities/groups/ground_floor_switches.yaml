@@ -1,13 +1,13 @@
 ground_floor_switches:
-  name: Ground Floor Switches
+  name: Ground Floor Switches Group
   entities:
     - switch.garage_hall
-    - switch.genti_bedroom
-    - switch.genti_closet
-    - switch.kids_bath_shower_light
-    - switch.kids_bathroom_main
-    - switch.kids_hall_3w_sw1
     - switch.laundry_room
     - switch.master_bath_toilet
+    - switch.kids_hall_3w_sw1
+    - switch.kids_bathroom_main
+    - switch.kids_bath_shower_light
+    - switch.genti_bedroom
+    - switch.genti_closet
     - switch.pantry
  
