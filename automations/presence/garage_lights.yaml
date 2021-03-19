@@ -1,0 +1,45 @@
+- alias: "Turn on main garage light when garage door opens. Sun Elevation and alarm conditions"
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    from: "closed"
+    to:
+      - "opening"
+      - "open"
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 5
+    - condition: state
+      entity_id: alarm_control_panel.adt_emmanuel_iris_home
+      state:
+        - armed_away
+        - armed_home
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.main_garage
+        - switch.workshop
+        - switch.garage_hall
+
+- alias: "Turn off garage lights after closing the garage door. Alarm Condition"
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    from: "open"
+    to:
+      - "closing"
+      - "closed"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.adt_emmanuel_iris_home
+      state:
+        - armed_away
+        - armed_home
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.main_garage
+        - switch.workshop
+        - switch.garage_hall
