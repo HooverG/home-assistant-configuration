@@ -4,14 +4,11 @@ icon: mdi:power-plug-off
 mode: single
 sequence:
   - service: media_player.turn_off
-    data:
+    target:
       entity_id: media_player.optoma_uhd
   - service: media_player.turn_off
-    data:
+    target:
       entity_id: media_player.denon_avr_x6700h
   - service: media_player.turn_off
-    data:
+    target:
       entity_id: media_player.home_theater_nvidia_shield
-  - service: switch.turn_on
-    data:
-      entity_id: switch.home_theater_main_light
