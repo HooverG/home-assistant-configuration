@@ -1,6 +1,7 @@
 tplink:
   discovery: true
   switch:
+    - host: !secret tp_link_switch_master_kitchen_bar
     - host: !secret tp_link_switch_maindoor_ip
     - host: !secret tp_link_switch_driveway_ip
     - host: !secret tp_link_landscape_lighting_plug_2_ip
@@ -36,3 +37,5 @@ tplink:
     - host: !secret tp_link_switch_home_theater_ambiance_light_ip
     - host: !secret tp_link_switch_home_theater_fan_ip
     - host: !secret tp_link_plug_1_ip
+  dimmer:
+    - host: !secret tp_link_dim_switch_master_kitchen_center_light
