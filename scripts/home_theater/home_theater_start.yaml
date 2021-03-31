@@ -13,6 +13,6 @@ sequence:
     target:
       entity_id: media_player.home_theater_nvidia_shield
   - service: androidtv.adb_command
-    data:
+    data_template:
       entity_id: media_player.home_theater_nvidia_shield
-      command: "am start -a android.intent.action.VIEW https://www.youtube.com/watch?v=8KGXSjtS5pk"
+      command: "am start -a android.intent.action.VIEW https://www.youtube.com/watch?v={{['8KGXSjtS5pk','nQvh-rAoK4k','XBPjVzSoepo','EEIk7gwjgIM','wHGIlstqXMA','tNkZsRW7h2c','_Nu-arlddP4']|random}}"
