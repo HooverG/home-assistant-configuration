@@ -1,5 +1,3 @@
 platform: androidtv
 name: Home Theater NVIDIA Shield
 host: !secret nvidia_shield_ip
-adb_server_ip: !secret s_adb_server_ip
-adb_server_port: !secret s_adb_server_port
