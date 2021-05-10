@@ -3,12 +3,7 @@ description: "Sleep Time"
 icon: mdi:sleep
 mode: single
 sequence:
-  - service: homeassistant.turn_off
-    target:
-      entity_id: 
-        - group.basement_switches
-        - group.ground_floor_switches
-        - switch.landscape_lighting_main_door
+  - scene: scene.goodnight
   - service: alarm_control_panel.alarm_arm_home
     target:
       entity_id: 
