@@ -1,1 +1,5 @@
-shutdown_home_audio: !secret home_audio_stop_cmd
+# Monoprice 6 Zone Home Audio Multizone Controller and Amplifier
+# Used with RS232 Connector hooked up to a RPI running Node.js API
+# https://github.com/jnewland/mpr-6zhmaut-api
+
+shutdown_home_audio: !secret shutdown_home_audio_cmd

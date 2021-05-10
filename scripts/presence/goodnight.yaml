@@ -4,7 +4,7 @@ icon: mdi:sleep
 mode: single
 sequence:
   - scene: scene.goodnight
-  - service: script.home_audio_stop
+  - service: shell_command.shutdown_home_audio
   - service: alarm_control_panel.alarm_arm_home
     target:
       entity_id:

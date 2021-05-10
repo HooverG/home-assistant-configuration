@@ -1,9 +1,0 @@
-# Monoprice 6 Zone Home Audio Multizone Controller and Amplifier
-# Used with RS232 Connector hooked up to a RPI running Node.js API
-# https://github.com/jnewland/mpr-6zhmaut-api
-
-alias: Stop Home Audio System
-description: "Stop Volumio and Turn Off all zones"
-mode: single
-sequence:
-  - service: shell_command.shutdown_home_audio
