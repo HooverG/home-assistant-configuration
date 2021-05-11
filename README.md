@@ -8,7 +8,7 @@ November2020 - New Personal configuration for [Home Assistant](https://www.home-
 More and more integrations must be set up through the UI so confg files don't always tell the whole story.
 Below is a list of integrations I use. I'll try to keep it up to date.  
 
-[Denon AVT Network Receiver](https://www.home-assistant.io/integrations/denonavr/) - Denon AVR-X6700H  
+[Denon AVR Network Receiver](https://www.home-assistant.io/integrations/denonavr/) - Denon AVR-X6700H  
 [Ecobee](https://www.home-assistant.io/integrations/ecobee/) - 2 Ecobee Smart Thermostats + Presence/Temperature Sensors  
 [Google Cast](https://www.home-assistant.io/integrations/cast/)  
 [Meteorologisk institutt](https://www.home-assistant.io/integrations/met/)  
