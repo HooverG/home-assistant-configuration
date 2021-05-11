@@ -4,3 +4,4 @@
 # Running Volumio on a separate RPI
 
 shutdown_home_audio: !secret shutdown_home_audio_cmd
+reset_params_home_audio: !secret reset_params_home_audio_cmd
