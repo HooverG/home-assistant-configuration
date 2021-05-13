@@ -1,12 +1,13 @@
 language: python
 python:
-- "3.8"
+  - "3.8"
 before_install:
-- cp travis_secrets.yaml secrets.yaml
-- touch home-assistant_v2.db
-- touch home-assistant.log
-- sudo apt-get install -y libudev-dev
+  - cp travis_secrets.yaml secrets.yaml
+  - touch home-assistant_v2.db
+  - touch home-assistant.log
+  - sudo apt-get install -y libudev-dev
+  - HA_VERSION=$(<.HA_VERSION)
 install:
-- pip3 install homeassistant
+  - pip3 install homeassistant==${HA_VERSION}
 script:
-- hass -c . --script check_config
+  - hass -c . --script check_config
