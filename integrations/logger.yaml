@@ -1,4 +1,4 @@
 logger:
   default: warning
-  logs:
+  #logs:
     #homeassistant.components.shell_command: debug
