@@ -1,0 +1,6 @@
+name: Laketop
+latitude: !secret inlaws_latitude
+longitude: !secret inlaws_longitude
+radius: 220
+passive: false
+icon: mdi:home-plus
