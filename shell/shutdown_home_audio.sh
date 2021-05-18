@@ -1,4 +1,5 @@
 #!/bin/bash
+# chmod 755 this file
 
 for zone in {1..6}
     do 
