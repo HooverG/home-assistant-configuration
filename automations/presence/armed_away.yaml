@@ -1,0 +1,36 @@
+- alias: "House is armed away"
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.adt_emmanuel_iris_home
+    to: "armed_away"
+  action:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.away
+    - service: shell_command.shutdown_home_audio
+    - service: script.home_theater_stop
+    - service: climate.set_preset_mode
+      target:
+        entity_id: all
+      data:
+        preset_mode: "Away"
+
+- alias: "Close any open garage door after after x minutes if house is armed away"
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.adt_emmanuel_iris_home
+    to: "armed_away"
+    for:
+      minutes: 10
+  condition:  
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: cover.garage_door, cover.garage_door_2
+      state: open
+  action:
+    - service: cover.close_cover
+      target:
+        entity_id:
+          - cover.garage_door
+          - cover.garage_door_2
