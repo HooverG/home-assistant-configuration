@@ -1,8 +1,6 @@
-# Command used : curl -s -o /dev/null -w '%{http_code}' http://ip_address/admin/
-
 platform: command_line
-command: !secret docker_pihole_curl
-name: 'Docker Pi-hole'
+command: !secret pihole_http_status_cmd
+name: 'Pi-hole - Docker'
 device_class: connectivity
 payload_on: 200
 scan_interval: 300

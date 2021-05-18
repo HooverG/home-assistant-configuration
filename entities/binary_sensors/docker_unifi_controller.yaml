@@ -1,9 +1,6 @@
-# curl command used : curl -k -s -o /dev/null -w '%{http_code}' https://ip_address:8443/manage/account/login
-# -k to allow insecure SSL connections
-
 platform: command_line
-command: !secret docker_unifi_controller_curl
-name: 'Docker Unifi Controller'
+command: !secret unifi_controller_http_status_cmd
+name: 'Unifi Controller - Docker'
 device_class: connectivity
 payload_on: 200
 scan_interval: 300
