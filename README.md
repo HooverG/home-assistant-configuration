@@ -33,6 +33,7 @@ Below is a list of integrations I use. I'll try to keep it up to date.
 
 ## Add-ons ##
 [Node Red](https://github.com/hassio-addons/addon-node-red)  
-[Visual Studio Code](https://github.com/hassio-addons/addon-vscode)    
+[Visual Studio Code](https://github.com/hassio-addons/addon-vscode)
+[Home Assistant Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup). This repo is not available out of the box. Add it to Supervisor > Add-on Store > [3 DOTS] > Repositories
 
 Feel free to fork, point out mistakes, bugs, improvements. Sharing is caring right ?
