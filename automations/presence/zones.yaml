@@ -1,4 +1,6 @@
-- alias: "Actions when either of our phones enter the home zone and the house is armed away"
+- id: tracked_phone_enters_home_zone_armed_away
+  alias: tracked_phone_enters_home_zone_armed_away
+  description: "Zone : one of the tracked phone enters home zone when home is armed away"
   trigger:
     - platform: zone
       entity_id:
@@ -13,3 +15,26 @@
       state: armed_away
   action:
     - service: ecobee.resume_program
+
+
+- id: tracked_phone_leaves_home_zone_armed_away
+  alias: tracked_phone_leaves_home_zone_armed_away
+  description: "Zone : one of the tracked phone leaves home zone when home is armed away"
+  trigger:
+    - platform: zone
+      entity_id:
+        - device_tracker.sm_n950u1
+        - device_tracker.iphone_6
+        - device_tracker.iphone_9
+      zone: zone.home
+      event: leave
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.adt_emmanuel_iris_home
+      state: armed_away
+  action:
+    - service: cover.close_cover
+      target:
+        entity_id:
+          - cover.garage_door
+          - cover.garage_door_2
