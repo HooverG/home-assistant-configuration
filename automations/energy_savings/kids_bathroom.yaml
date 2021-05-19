@@ -1,4 +1,6 @@
-- alias: "Energy Savings : Kids Bathroom Fan auto-off x minutes after main light is turned off"
+- id: energy_saving_kids_auto_off_bathroom_fan
+  alias: "energy_saving_auto_off_kids_bathroom_fan"
+  description: "Turns off Kids Bathroom fan automatically after x minutes."
   trigger:
     platform: state
     entity_id: switch.kids_bathroom_main
@@ -8,7 +10,9 @@
     - service: switch.turn_off
       entity_id: switch.kids_bath_fan
       
-- alias: "Energy Savings: Turn off shower light as soon as main light is turned off"
+- id: energy_saving_auto_off_kids_bathroom_shower_light
+  alias: "energy_saving_auto_off_kids_bathroom_shower_light"
+  description: "Turns off shower light after main light is turned off"
   trigger:
     platform: state
     entity_id: switch.kids_bathroom_main
