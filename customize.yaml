@@ -1,0 +1,17 @@
+automation.energy_saving_auto_off_kids_bathroom_fan:
+  friendly_name: 'Energy Saving : Kids Bathroom Fan Auto Off'
+device_tracker.sm_n950u1:
+  icon: mdi:cellphone-text
+device_tracker.iphone_6:
+  icon: mdi:cellphone-text
+device_tracker.iphone_9:
+  icon: mdi:cellphone-text
+device_tracker.eaves:
+  friendly_name: AP - Eaves
+  icon: mdi:antenna
+device_tracker.fireplace:
+  friendly_name: AP - Fireplace
+  icon: mdi:antenna
+device_tracker.staircase:
+  friendly_name: AP - Staircase
+  icon: mdi:antenna
