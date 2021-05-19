@@ -1,0 +1,7 @@
+platform: command_line
+command: !secret monoprice_controller_api_http_status_cmd
+name: 'Monoprice Controller API'
+device_class: connectivity
+payload_on: 200
+scan_interval: 300
+command_timeout: 30
