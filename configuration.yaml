@@ -1,3 +1,4 @@
 homeassistant:
   packages: !include_dir_named integrations
   customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml

@@ -1,0 +1,68 @@
+- platform: command_line
+  switches:
+    sound_zone_11:
+      command_on: !secret home_audio_zone_switch_cmd_z11_on
+      command_off: !secret home_audio_zone_switch_cmd_z11_off
+      command_state: !secret home_audio_get_z11_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z11 - Kitchen"
+    sound_zone_12:
+      command_on: !secret home_audio_zone_switch_cmd_z12_on
+      command_off: !secret home_audio_zone_switch_cmd_z12_off
+      command_state: !secret home_audio_get_z12_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z12 - Patio"
+    sound_zone_13:
+      command_on: !secret home_audio_zone_switch_cmd_z13_on
+      command_off: !secret home_audio_zone_switch_cmd_z13_off
+      command_state: !secret home_audio_get_z13_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z13 - Great Room"
+    sound_zone_14:
+      command_on: !secret home_audio_zone_switch_cmd_z14_on
+      command_off: !secret home_audio_zone_switch_cmd_z14_off
+      command_state: !secret home_audio_get_z14_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z14 - Master Bedroom"
+    sound_zone_15:
+      command_on: !secret home_audio_zone_switch_cmd_z15_on
+      command_off: !secret home_audio_zone_switch_cmd_z15_off
+      command_state: !secret home_audio_get_z15_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z15 - Master Bathroom"
+    sound_zone_16:
+      command_on: !secret home_audio_zone_switch_cmd_z16_on
+      command_off: !secret home_audio_zone_switch_cmd_z16_off
+      command_state: !secret home_audio_get_z16_params_cmd
+      value_template: >
+          {% if value_json.pr == "01" %}
+            true
+          {% else %}
+            false
+          {% endif %}
+      friendly_name: "Z16 - Dining Roomm"
