@@ -12,6 +12,7 @@
 .storage
 .cloud
 .google.token
+.DS_Store
 
 ip_bans.yaml
 secrets.yaml
