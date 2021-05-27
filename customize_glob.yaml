@@ -1,2 +1,4 @@
 switch.sound_zone_*:
   icon: mdi:speaker
+device_tracker.*:
+  icon: mdi:server-network
