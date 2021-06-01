@@ -1,0 +1,6 @@
+- platform: ping
+  count: 10
+  hosts:
+    illinois: !secret illinois_ip
+    monoprice_controller: !secret monoprice_controller_ip
+    adsb: !secret adsb_ip
