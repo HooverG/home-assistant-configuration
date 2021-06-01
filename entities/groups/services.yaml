@@ -1,0 +1,12 @@
+local_services:
+  name: Local Services
+  icon: mdi:docker
+  all: true
+  entities:
+    - binary_sensor.pi_hole_docker
+    - binary_sensor.docker_pi_hole_ftldns
+    - binary_sensor.unifi_controller_docker
+    - binary_sensor.volumio_frontend
+    - binary_sensor.monoprice_controller_api
+    - binary_sensor.fr24_feeder_online
+    - binary_sensor.fr24_feeder_link_connected
