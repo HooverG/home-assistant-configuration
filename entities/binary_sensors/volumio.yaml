@@ -1,7 +1,7 @@
-platform: command_line
-command: !secret volumio_http_status_cmd
-name: 'Volumio Frontend'
-device_class: connectivity
-payload_on: 200
-scan_interval: 300
-command_timeout: 30
+- platform: command_line
+  command: !secret volumio_http_status_cmd
+  name: 'Volumio Frontend'
+  device_class: connectivity
+  payload_on: 200
+  scan_interval: 300
+  command_timeout: 30
