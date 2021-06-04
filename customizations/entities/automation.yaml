@@ -1,0 +1,8 @@
+automation.energy_saving_auto_off_kids_bathroom_fan:
+  friendly_name: 'Energy Saving : Kids Bathroom Fan Auto Off'
+automation.energy_saving_auto_off_kids_bathroom_shower_light:
+  friendly_name: 'Energy Saving: Kids Bathroom Shower Light Auto Off'
+automation.tracked_phone_enters_home_zone_armed_away:
+  friendly_name: 'Zone : one of the tracked phone enters home zone when home is armed away'
+automation.tracked_phone_leaves_home_zone_armed_away:
+  friendly_name: 'Zone : one of the tracked phone leaves home zone when home is armed away'

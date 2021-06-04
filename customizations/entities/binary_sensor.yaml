@@ -1,0 +1,10 @@
+binary_sensor.kitchen_window1:
+  friendly_name: Master Kitchen Left Window
+binary_sensor.bedroom_2_window_3:
+  friendly_name: Dea Bedroom Back Right Window
+binary_sensor.hallway_bathroom_windo:
+  friendly_name: Dea Bedroom Back Left Window
+binary_sensor.bedroom_2_window_1:
+  friendly_name: Dea Bedroom Side Right Window
+binary_sensor.bedroom_2_window_2:
+    friendly_name: Dea Bedroom Side Left Window
