@@ -1,0 +1,6 @@
+name: Airport
+latitude: !secret airport_latitude
+longitude: !secret airport_longitude
+radius: 5000
+passive: false
+icon: mdi:airplane-landing
