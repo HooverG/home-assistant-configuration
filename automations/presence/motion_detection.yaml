@@ -1,0 +1,17 @@
+# This automation is not used. Keeping it as an example.
+# Because of the pull delay, screenshots are not pertinent.
+
+#- id: cctv_motion_detected
+#  alias: cctv_motion_detected
+#  description: "CCTV : Take snapshot when motion is detected"
+#  trigger:
+#    - platform: state
+#      entity_id:
+#        - binary_sensor.basement_kitchen_motion
+#      to: "on"
+#  action:
+#    - service: camera.snapshot
+#      data:
+#        filename: /media/cctv/motion_detection/{{ trigger.entity_id|replace('binary_sensor.','')|replace('_motion','') }}_snapshot_{{ now().strftime("%Y-%m-%d_%H-%M-%S") }}.jpg
+#      target:
+#        entity_id: "{{ trigger.entity_id|replace('binary_sensor','camera')|replace('_motion','') }}"
