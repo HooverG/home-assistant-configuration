@@ -3,6 +3,11 @@ description: "Sleep Time"
 icon: mdi:sleep
 mode: single
 sequence:
+  - service: cover.close_cover
+    target:
+      entity_id:
+        - cover.garage_door
+        - cover.garage_door_2
   - scene: scene.goodnight
   - service: shell_command.shutdown_home_audio
   - service: alarm_control_panel.alarm_arm_home
