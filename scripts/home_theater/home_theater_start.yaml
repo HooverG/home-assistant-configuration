@@ -8,7 +8,7 @@ sequence:
       entity_id: media_player.optoma_uhd
   - service: media_player.turn_on
     target:
-      entity_id: media_player.denon_avr_x6700h
+      entity_id: media_player.denon_avr_x6700h_2
   - service: media_player.turn_on
     target:
       entity_id: media_player.home_theater_nvidia_shield
