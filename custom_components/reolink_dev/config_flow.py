@@ -14,19 +14,26 @@ from homeassistant.const import (
 from homeassistant.core import callback
 from homeassistant.helpers import config_validation as cv
 
+from reolink.exceptions import CredentialsInvalidError
+
 from .base import ReolinkBase
 from .const import (
     BASE,
     CONF_CHANNEL,
+    CONF_USE_HTTPS,
     CONF_MOTION_OFF_DELAY,
     CONF_PLAYBACK_MONTHS,
     CONF_PROTOCOL,
     CONF_STREAM,
+    CONF_STREAM_FORMAT,
     CONF_THUMBNAIL_PATH,
     DEFAULT_MOTION_OFF_DELAY,
+    DEFAULT_USE_HTTPS,
     DEFAULT_PLAYBACK_MONTHS,
     DEFAULT_PROTOCOL,
     DEFAULT_STREAM,
+    DEFAULT_STREAM_FORMAT,
+    DEFAULT_THUMBNAIL_PATH,
     DEFAULT_TIMEOUT,
     DOMAIN,
 )
@@ -74,6 +81,8 @@ class ReolinkFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             except InvalidHost:
                 errors["host"] = "cannot_connect"
+            except InvalidCredentials:
+                errors["host"] = "invalid_auth"
             except Exception:  # pylint: disable=broad-except
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
@@ -83,7 +92,8 @@ class ReolinkFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             data_schema=vol.Schema(
                 {
                     vol.Required(CONF_HOST): str,
-                    vol.Optional(CONF_PORT, default=80): cv.positive_int,
+                    vol.Required(CONF_PORT, default=443): cv.positive_int,
+                    vol.Required(CONF_USE_HTTPS, default=DEFAULT_USE_HTTPS): bool,
                     vol.Required(CONF_USERNAME): str,
                     vol.Required(CONF_PASSWORD): str,
                 }
@@ -165,8 +175,16 @@ class ReolinkOptionsFlowHandler(config_entries.OptionsFlow):
                         CONF_STREAM,
                         default=self.config_entry.options.get(
                             CONF_STREAM, DEFAULT_STREAM
-                        ),
-                    ): vol.In(["main", "sub"]),
+                        ),): vol.In(
+                        ["main", "sub", "ext"]
+                    ),
+                    vol.Required(CONF_STREAM_FORMAT, 
+                    default=self.config_entry.options.get(
+                            CONF_STREAM_FORMAT, DEFAULT_STREAM_FORMAT
+                        ),): vol.In(
+                        ["h264", "h265"]
+                    ),
+
                     vol.Required(
                         CONF_MOTION_OFF_DELAY,
                         default=self.config_entry.options.get(
@@ -182,7 +200,7 @@ class ReolinkOptionsFlowHandler(config_entries.OptionsFlow):
                     vol.Optional(
                         CONF_THUMBNAIL_PATH,
                         default=self.config_entry.options.get(
-                            CONF_THUMBNAIL_PATH, None
+                            CONF_THUMBNAIL_PATH, DEFAULT_THUMBNAIL_PATH
                         ),
                     ): cv.string,
                     vol.Optional(
@@ -206,3 +224,7 @@ class CannotConnect(exceptions.HomeAssistantError):
 
 class InvalidHost(exceptions.HomeAssistantError):
     """Error to indicate there is an invalid hostname."""
+
+
+class InvalidCredentials(exceptions.HomeAssistantError):
+    """Error to indicate invalid credentials."""
